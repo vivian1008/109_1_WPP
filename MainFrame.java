@@ -5,7 +5,6 @@ import javax.swing.*;
 
 public class MainFrame extends JFrame{
     private int x,y;
-    private JButton jst = new JButton("Start");
     private JButton jet = new JButton("Exit");
     private JButton jan = new JButton("Again");
     private JButton jup = new JButton("Up");
@@ -21,7 +20,7 @@ private void init(){
     this.setLocation(100,50);
     this.setSize(450,400);
 
-    jst.setBounds(10,300,70,25);
+    
     jet.setBounds(90,300,70,25);
     jan.setBounds(170,300,70,25);
     jup.setBounds(330,310,70,25);
@@ -30,7 +29,7 @@ private void init(){
     jrt.setBounds(280,280,70,25);
     jlb.setBounds(x=200,y=150,50,50);
 
-    this.add(jst);
+    
     this.add(jet);
     this.add(jan);
     this.add(jup);
