@@ -11,7 +11,7 @@ public class MainFrame extends JFrame{
     private JButton jdn = new JButton("Down");
     private JButton jlt = new JButton("Left");
     private JButton jrt = new JButton("Right");
-    private JLabel jlb = new JLabel("@");
+    private JLabel jlb = new JLabel("-_-",JLabel.CENTER);
 public MainFrame(){
     init();
 }
@@ -21,11 +21,11 @@ private void init(){
     this.setSize(450,400);
 
     
-    jet.setBounds(90,300,70,25);
-    jan.setBounds(170,300,70,25);
-    jup.setBounds(330,310,70,25);
-    jdn.setBounds(330,250,70,25);
-    jlt.setBounds(370,280,70,25);
+    jet.setBounds(50,300,70,25);
+    jan.setBounds(150,300,70,25);
+    jup.setBounds(320,310,70,25);
+    jdn.setBounds(320,250,70,25);
+    jlt.setBounds(360,280,70,25);
     jrt.setBounds(280,280,70,25);
     jlb.setBounds(x=200,y=150,50,50);
 
