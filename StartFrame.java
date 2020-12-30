@@ -6,7 +6,6 @@ import javax.swing.*;
 public class StartFrame extends JFrame{
     private JButton jst = new JButton("Start");
     private JLabel jlb = new JLabel("Eat Dots !",JLabel.CENTER);
-    private JLabel wle = new JLabel("Hi! the game will begin immediately when you click start button",JLabel.CENTER);
     private JLabel mtd = new JLabel("the play method is control the Determined face to touch the dot in 1 minutes!",JLabel.CENTER);
 
     public StartFrame(){
@@ -20,11 +19,9 @@ public class StartFrame extends JFrame{
 
     jst.setBounds(180,300,70,25);
     jlb.setBounds(115,50,200,100);
-    wle.setBounds(0,150,450,50);
-    mtd.setBounds(0,200,450,50);
+    mtd.setBounds(0,150,450,50);
     this.add(jst);
     this.add(jlb);
-    this.add(wle);
     this.add(mtd);
 
     this.addWindowListener(new WindowAdapter(){
