@@ -34,6 +34,7 @@ public class StartFrame extends JFrame{
         public void actionPerformed(ActionEvent ae){
                 MainFrame mFrm = new MainFrame();
                 mFrm.setVisible(true);
+                StartFrame.this.dispose();
         }
     });
      }
