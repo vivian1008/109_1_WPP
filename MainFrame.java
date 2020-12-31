@@ -29,6 +29,15 @@ private void init(){
     cp=this.getContentPane();
     cp.setLayout(new BorderLayout());
 
+    for(int i = 0; i < 4; i++) {
+        String s = "" + i;
+        tim[i]= new JLabel(s);
+     }
+     tim[0]= new JLabel("0");
+     tim[1]= new JLabel(":");
+     tim[2]= new JLabel("0");
+     tim[3]= new JLabel("0");
+
     jgo.setSize(70,25);
     jet.setSize(70,25);
     jan.setSize(70,25);
@@ -46,24 +55,30 @@ private void init(){
     jpl3.add(jlt);
     jpl3.add(jrt);
     this.add(jlb);
-   // jpl.add(tim[0]);
-   // jpl.add(tim[1]);
-    //jpl.add(tim[2]);
-    //jpl.add(tim[3]);
+    jpl.add(tim[0]);
+    jpl.add(tim[1]);
+    jpl.add(tim[2]);
+    jpl.add(tim[3]);
         
     cp.add(jpl, BorderLayout.NORTH);
     cp.add(jpl3, BorderLayout.SOUTH);
     jpl.setLayout(new GridLayout(1,4,2,2));
     jpl3.setLayout(new GridLayout(1,7,1,1));
 
-    //for(int i = 0; i < 4; i++) {
-    //    String s = "" + i;
-    //    tim[i]= new JLabel(s);
-    //}
-    //tim[0]= new JLabel("0");
-    //tim[1]= new JLabel(":");
-    //tim[2]= new JLabel("0");
-    //tim[3]= new JLabel("0");
+    
+
+    tm = new Timer(200, new ActionListener() {
+       public void actionPerformed(ActionEvent e) {
+           scd++;
+           if(scd==60) {
+               scd=0;
+               min++;
+           }
+           tim[3].setText(Integer.toString(scd % 10));
+           tim[2].setText(Integer.toString(scd / 10));
+           tim[0].setText(Integer.toString(min % 10) );
+       }
+   });
 
     this.addWindowListener(new WindowAdapter(){
             public void windowClosing(WindowEvent we){
@@ -71,11 +86,11 @@ private void init(){
             }
         });
 
-    //jgo.addActionListener(new ActionListener() {
-     //       public void actionPerformed(ActionEvent ae) {
-     //       tm.start();
-      //      }
-      //  });
+    jgo.addActionListener(new ActionListener() {
+           public void actionPerformed(ActionEvent ae) {
+           tm.start();
+           }
+       });
 
     jet.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent ae){
@@ -106,18 +121,5 @@ private void init(){
             jlb.setLocation(x = x+10 ,y);
         }
     });
-
-   // tm = new Timer(200, new ActionListener() {
-     //   public void actionPerformed(ActionEvent e) {
-     //       scd++;
-     //       if(scd==60) {
-     //           scd=0;
-     //           min++;
-      //      }
-      //      tim[3].setText(Integer.toString(scd % 10));
-       //     tim[2].setText(Integer.toString(scd / 10));
-       //     tim[0].setText(Integer.toString(min % 10) );
-       // }
-   // });
 }
 }
