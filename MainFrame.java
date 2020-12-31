@@ -17,8 +17,9 @@ public class MainFrame extends JFrame{
     private JLabel jlb = new JLabel("-_-",JLabel.CENTER);
     private Container cp;
     private JPanel jpl = new JPanel();
+    private JPanel jpl2 = new JPanel();
     private JPanel jpl3 = new JPanel();
-    private JLabel tim[] = new JLabel[4];
+    private JLabel tim[] = new JLabel[5];
 public MainFrame(){
     init();
 }
@@ -29,7 +30,7 @@ private void init(){
     cp=this.getContentPane();
     cp.setLayout(new BorderLayout());
 
-    for(int i = 0; i < 4; i++) {
+    for(int i = 0; i < 5; i++) {
         String s = "" + i;
         tim[i]= new JLabel(s);
      }
@@ -37,6 +38,7 @@ private void init(){
      tim[1]= new JLabel(":");
      tim[2]= new JLabel("0");
      tim[3]= new JLabel("0");
+     tim[4]= new JLabel("0");
 
     jgo.setSize(70,25);
     jet.setSize(70,25);
@@ -59,10 +61,11 @@ private void init(){
     jpl.add(tim[1]);
     jpl.add(tim[2]);
     jpl.add(tim[3]);
+    jpl.add(tim[4]);
         
     cp.add(jpl, BorderLayout.NORTH);
     cp.add(jpl3, BorderLayout.SOUTH);
-    jpl.setLayout(new GridLayout(1,4,2,2));
+    jpl.setLayout(new GridLayout(1,4,1,1));
     jpl3.setLayout(new GridLayout(1,7,1,1));
 
     
@@ -70,13 +73,14 @@ private void init(){
     tm = new Timer(200, new ActionListener() {
        public void actionPerformed(ActionEvent e) {
            scd++;
-           if(scd==60) {
-               scd=0;
+           if(scd == 100) {
+               scd = 0;
                min++;
            }
-           tim[3].setText(Integer.toString(scd % 10));
-           tim[2].setText(Integer.toString(scd / 10));
-           tim[0].setText(Integer.toString(min % 10) );
+           tim[4].setText(Integer.toString(scd % 10));
+           tim[3].setText(Integer.toString(scd / 10));
+           tim[2].setText(Integer.toString(min % 10));
+           tim[0].setText(Integer.toString(min / 10));
        }
    });
 
