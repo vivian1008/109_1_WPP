@@ -5,7 +5,7 @@ import java.lang.*;
 
 public class MainFrame extends JFrame{
     private int x,y;
-    private int min,scd = 0;
+    private int min,scd,msd = 0;
     private Timer tm;
     private JButton jgo = new JButton("Go!");
     private JButton jet = new JButton("Exit");
@@ -70,17 +70,22 @@ private void init(){
 
     
 
-    tm = new Timer(200, new ActionListener() {
+    tm = new Timer(150, new ActionListener() {
        public void actionPerformed(ActionEvent e) {
-           scd++;
-           if(scd == 100) {
+           msd++;
+           if(msd == 10) {
+               msd = 0;
+               scd++;
+           }
+           if(scd == 60){
+               msd = 0;
                scd = 0;
                min++;
            }
-           tim[4].setText(Integer.toString(scd % 10));
-           tim[3].setText(Integer.toString(scd / 10));
-           tim[2].setText(Integer.toString(min % 10));
-           tim[0].setText(Integer.toString(min / 10));
+           tim[4].setText(Integer.toString(msd));
+           tim[3].setText(Integer.toString(scd % 10));
+           tim[2].setText(Integer.toString(scd / 10));
+           tim[0].setText(Integer.toString(min));
        }
    });
 
