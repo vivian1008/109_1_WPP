@@ -98,12 +98,24 @@ private void init(){
     jgo.addActionListener(new ActionListener() {
            public void actionPerformed(ActionEvent ae) {
            tm.start();
+           over();
            }
        });
 
     jet.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent ae){
                 System.exit(0);
+            }
+        });
+
+    jan.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent ae){
+                tim[4].setText(Integer.toString(msd = 0));
+                tim[3].setText(Integer.toString(scd = 0));
+                tim[2].setText(Integer.toString(scd = 0));
+                tim[0].setText(Integer.toString(min = 0));
+                tm.stop();
+                jlb.setBounds(x=20,y=20,50,50);
             }
         });
 
@@ -130,5 +142,10 @@ private void init(){
             jlb.setLocation(x = x+10 ,y);
         }
     });
+}
+public void over(){
+    if(min == 1){
+        JOptionPane.showMessageDialog(this,"Time Over!");
+    }
 }
 }
