@@ -10,15 +10,13 @@ public class MainFrame extends JFrame{
     private JButton jgo = new JButton("Go!");
     private JButton jet = new JButton("Exit");
     private JButton jan = new JButton("Again");
-    private JButton jup = new JButton("Up");
-    private JButton jdn = new JButton("Down");
-    private JButton jlt = new JButton("Left");
-    private JButton jrt = new JButton("Right");
-    private JLabel jlb = new JLabel("-_-",JLabel.CENTER);
+    private JButton jup = new JButton("U");
+    private JButton jdn = new JButton("D");
+    private JButton jlt = new JButton("L");
+    private JButton jrt = new JButton("R");
+    private JLabel jlb = new JLabel("-_-");
     private Container cp;
     private JPanel jpl = new JPanel();
-    private JPanel jpl2 = new JPanel();
-    private JPanel jpl3 = new JPanel();
     private JLabel tim[] = new JLabel[5];
 public MainFrame(){
     init();
@@ -40,22 +38,22 @@ private void init(){
      tim[3]= new JLabel("0");
      tim[4]= new JLabel("0");
 
-    jgo.setSize(70,25);
-    jet.setSize(70,25);
-    jan.setSize(70,25);
-    jup.setSize(50,25);
-    jdn.setSize(50,25);
-    jlt.setSize(50,25);
-    jrt.setSize(50,25);
-    jlb.setBounds(x=20,y=20,50,50);
+    jgo.setBounds(0,335,70,25);
+    jet.setBounds(75,335,70,25);
+    jan.setBounds(150,335,70,25);
+    jup.setBounds(375,325,50,25);
+    jdn.setBounds(375,275,50,25);
+    jlt.setBounds(425,300,50,25);
+    jrt.setBounds(325,300,50,25);
+    jlb.setBounds(x=250,y=20,50,50);
 
-    jpl3.add(jgo);
-    jpl3.add(jet);
-    jpl3.add(jan);
-    jpl3.add(jup);
-    jpl3.add(jdn);
-    jpl3.add(jlt);
-    jpl3.add(jrt);
+    this.add(jgo);
+    this.add(jet);
+    this.add(jan);
+    this.add(jup);
+    this.add(jdn);
+    this.add(jlt);
+    this.add(jrt);
     this.add(jlb);
     jpl.add(tim[0]);
     jpl.add(tim[1]);
@@ -64,9 +62,8 @@ private void init(){
     jpl.add(tim[4]);
         
     cp.add(jpl, BorderLayout.NORTH);
-    cp.add(jpl3, BorderLayout.SOUTH);
     jpl.setLayout(new GridLayout(1,4,1,1));
-    jpl3.setLayout(new GridLayout(1,7,1,1));
+
 
     
 
@@ -115,7 +112,7 @@ private void init(){
                 tim[2].setText(Integer.toString(scd = 0));
                 tim[0].setText(Integer.toString(min = 0));
                 tm.stop();
-                jlb.setBounds(x=20,y=20,50,50);
+                jlb.setLocation(x=250,y=20);
             }
         });
 
