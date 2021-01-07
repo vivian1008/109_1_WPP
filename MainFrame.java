@@ -90,7 +90,9 @@ private void init(){
     jgo.addActionListener(new ActionListener() {
            public void actionPerformed(ActionEvent ae) {
            tm.start();
-           over();
+           if(msd == 0 && scd == 0 && min == 1){
+            over();
+           }
            }
        });
 
@@ -108,41 +110,35 @@ private void init(){
                 tim[0].setText(Integer.toString(min = 0));
                 tm.stop();
                 jlb.setLocation(x=250,y=150);
-                over();
             }
         });
 
     jup.addActionListener(new ActionListener(){
         public void actionPerformed(ActionEvent ae){
             jlb.setLocation(x,y = y-10);
-            over();
         }
     });
 
     jdn.addActionListener(new ActionListener(){
         public void actionPerformed(ActionEvent ae){
             jlb.setLocation(x,y = y + 10);
-            over();
         }
     });
 
     jlt.addActionListener(new ActionListener(){
         public void actionPerformed(ActionEvent ae){
             jlb.setLocation(x = x-10 ,y);
-            over();
         }
     });
 
     jrt.addActionListener(new ActionListener(){
         public void actionPerformed(ActionEvent ae){
             jlb.setLocation(x = x+10 ,y);
-            over();
         }
     });
 }
 public void over(){
-    if(tim[0].getText().equals("1")){
         JOptionPane.showMessageDialog(this,"Time Over!");
-}
+        tm.stop();
 }
 }
