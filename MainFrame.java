@@ -10,6 +10,7 @@ public class MainFrame extends JFrame{
     private JButton jgo = new JButton("Go!");
     private JButton jet = new JButton("Exit");
     private JButton jan = new JButton("Again");
+    private JButton jad = new JButton("Add");
     private JButton jup = new JButton("U");
     private JButton jdn = new JButton("D");
     private JButton jlt = new JButton("L");
@@ -37,6 +38,7 @@ private void init(){
     jgo.setBounds(0,335,70,25);
     jet.setBounds(75,335,70,25);
     jan.setBounds(150,335,70,25);
+    jad.setBounds(300,20,70,25);
     jup.setBounds(375,325,50,25);
     jdn.setBounds(375,275,50,25);
     jlt.setBounds(425,300,50,25);
@@ -51,6 +53,7 @@ private void init(){
     this.add(jgo);
     this.add(jet);
     this.add(jan);
+    this.add(jad);
     this.add(jup);
     this.add(jdn);
     this.add(jlt);
@@ -109,6 +112,13 @@ private void init(){
                 tim[0].setText(Integer.toString(min = 0));
                 tm.stop();
                 jlb.setLocation(x=250,y=150);
+            }
+        });
+
+        jad.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent ae){
+                Fish fish = new Fish();
+                //this.add(fish);
             }
         });
 
