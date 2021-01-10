@@ -27,6 +27,7 @@ public MovingObject() {
         add.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 Fish fish1=new Fish();
+                ground.add(fish1);
                 //sub sub=new sub();
                 //Thread subT=new Thread(sub);
                 //ground.add(sub);

@@ -10,7 +10,7 @@ public class Fish extends JLabel{
     private int x,y,w=40;
     private boolean flag=true;
     public Fish(){
-        this.setText(">_<");
+        this.setText(".");
         init();
     }
     private void init() {
