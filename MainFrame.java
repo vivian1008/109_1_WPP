@@ -62,7 +62,7 @@ private void init(){
     this.add(tim[3]);
     //this.add(tim[4]);
 
-    tm = new Timer(150, new ActionListener() {
+    tm = new Timer(100, new ActionListener() {
        public void actionPerformed(ActionEvent e) {
            msd++;
            if(msd == 10) {
@@ -73,6 +73,8 @@ private void init(){
                msd = 0;
                scd = 0;
                min++;
+               over();
+               tm.stop();
            }
            tim[4].setText(Integer.toString(msd));
            tim[3].setText(Integer.toString(scd % 10));
@@ -90,9 +92,6 @@ private void init(){
     jgo.addActionListener(new ActionListener() {
            public void actionPerformed(ActionEvent ae) {
            tm.start();
-           if(msd == 0 && scd == 0 && min == 1){
-            over();
-           }
            }
        });
 
@@ -139,6 +138,5 @@ private void init(){
 }
 public void over(){
         JOptionPane.showMessageDialog(this,"Time Over!");
-        tm.stop();
 }
 }
