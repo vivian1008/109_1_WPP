@@ -4,18 +4,18 @@ import javax.swing.*;
 import java.lang.*;
 
 public class MainFrame extends JFrame{
-    private int x,y;
+    private int x,y,u,v;
     private int min,scd,msd = 0;
     private Timer tm;
     private JButton jgo = new JButton("Go!");
     private JButton jet = new JButton("Exit");
     private JButton jan = new JButton("Again");
-    private JButton jad = new JButton("Add");
     private JButton jup = new JButton("U");
     private JButton jdn = new JButton("D");
     private JButton jlt = new JButton("L");
     private JButton jrt = new JButton("R");
     private JLabel jlb = new JLabel("-_-");
+    private JLabel jdt = new JLabel(".");
     private JLabel tim[] = new JLabel[5];
 public MainFrame(){
     init();
@@ -38,12 +38,12 @@ private void init(){
     jgo.setBounds(0,335,70,25);
     jet.setBounds(75,335,70,25);
     jan.setBounds(150,335,70,25);
-    jad.setBounds(300,20,70,25);
     jup.setBounds(375,325,50,25);
     jdn.setBounds(375,275,50,25);
     jlt.setBounds(425,300,50,25);
     jrt.setBounds(325,300,50,25);
-    jlb.setBounds(x=250,y=150,50,50);
+    jlb.setBounds(u=250,v=150,50,50);
+    jdt.setBounds(x = 300,y = 100,50,50);
     tim[0].setBounds(50,20,10,10);
     tim[1].setBounds(70,20,10,10);
     tim[2].setBounds(90,20,10,10);
@@ -53,12 +53,12 @@ private void init(){
     this.add(jgo);
     this.add(jet);
     this.add(jan);
-    this.add(jad);
     this.add(jup);
     this.add(jdn);
     this.add(jlt);
     this.add(jrt);
     this.add(jlb);
+    this.add(jdt);
     this.add(tim[0]);
     this.add(tim[1]);
     this.add(tim[2]);
@@ -111,42 +111,44 @@ private void init(){
                 tim[2].setText(Integer.toString(scd = 0));
                 tim[0].setText(Integer.toString(min = 0));
                 tm.stop();
-                jlb.setLocation(x=250,y=150);
+                jlb.setLocation(u=250,v=150);
+                jdt.setLocation(x=300,y=100);
             }
         });
 
-        jad.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent ae){
-                Fish fish = new Fish();
-                //this.add(fish);
-            }
-        });
 
     jup.addActionListener(new ActionListener(){
         public void actionPerformed(ActionEvent ae){
-            jlb.setLocation(x,y = y-10);
+            jlb.setLocation(u,v = v-10);
+            jdt.setLocation(x,y = y-10);
         }
     });
 
     jdn.addActionListener(new ActionListener(){
         public void actionPerformed(ActionEvent ae){
-            jlb.setLocation(x,y = y + 10);
+            jlb.setLocation(u,v = v + 10);
+            jdt.setLocation(x,y = y + 10);
         }
     });
 
     jlt.addActionListener(new ActionListener(){
         public void actionPerformed(ActionEvent ae){
-            jlb.setLocation(x = x-10 ,y);
+            jlb.setLocation(u = u-10 ,v);
+            jdt.setLocation(x = x-10 ,y);
         }
     });
 
     jrt.addActionListener(new ActionListener(){
         public void actionPerformed(ActionEvent ae){
-            jlb.setLocation(x = x+10 ,y);
+            jlb.setLocation(u = u+10 ,v);
+            jdt.setLocation(x = x+10 ,y);
         }
     });
 }
 public void over(){
         JOptionPane.showMessageDialog(this,"Time Over!");
+}
+public void win(){
+    JOptionPane.showMessageDialog(this,"You Win!");
 }
 }
