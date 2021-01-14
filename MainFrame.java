@@ -176,11 +176,15 @@ private void init(){
             jlb.setLocation(u = u+10 ,v);
         }
     });
+      
 }
 public void over(){
         JOptionPane.showMessageDialog(this,"Time Over!");
 }
 public void win(){
     JOptionPane.showMessageDialog(this,"You Win!");
+    MainFrame.this.dispose();
+    MainFrame mFrm = new MainFrame();
+    mFrm.setVisible(true);
 }
 }
