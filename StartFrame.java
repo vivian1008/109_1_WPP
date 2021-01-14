@@ -5,7 +5,7 @@ import javax.swing.*;
 
 public class StartFrame extends JFrame{
     private JButton jst = new JButton("Start");
-    private JLabel jlb = new JLabel("Get Dots !",JLabel.CENTER);
+    private JLabel jlb = new JLabel("Get Dot !",JLabel.CENTER);
     private JLabel mtd = new JLabel("the play method is control the Determined face to touch the dot in 1 minutes!",JLabel.CENTER);
 
     public StartFrame(){
