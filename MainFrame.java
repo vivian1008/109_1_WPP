@@ -130,6 +130,9 @@ private void init(){
             }
         });
         tm2.start();
+        if(u == x && v == y){
+            win();
+        }
            }
        });
 
@@ -155,25 +158,36 @@ private void init(){
     jup.addActionListener(new ActionListener(){
         public void actionPerformed(ActionEvent ae){
             jlb.setLocation(u,v = v-10);
-
+            if(u == x && v == y){
+                win();
+            }
         }
     });
 
     jdn.addActionListener(new ActionListener(){
         public void actionPerformed(ActionEvent ae){
             jlb.setLocation(u,v = v + 10);
+            if(u == x && v == y){
+                win();
+            }
         }
     });
 
     jlt.addActionListener(new ActionListener(){
         public void actionPerformed(ActionEvent ae){
             jlb.setLocation(u = u-10 ,v);
+            if(u == x && v == y){
+                win();
+            }
         }
     });
 
     jrt.addActionListener(new ActionListener(){
         public void actionPerformed(ActionEvent ae){
             jlb.setLocation(u = u+10 ,v);
+            if(u == x && v == y){
+                win();
+            }
         }
     });
       
@@ -182,6 +196,7 @@ public void over(){
         JOptionPane.showMessageDialog(this,"Time Over!");
 }
 public void win(){
+    tm.stop();
     JOptionPane.showMessageDialog(this,"You Win!");
     MainFrame.this.dispose();
     MainFrame mFrm = new MainFrame();
