@@ -6,7 +6,7 @@ import javax.swing.*;
 public class StartFrame extends JFrame{
     private JButton jst = new JButton("Start");
     private JLabel jlb = new JLabel("Get Dot !",JLabel.CENTER);
-    private JLabel mtd = new JLabel("the play method is control the Determined face to get the dot in 1 minutes!",JLabel.CENTER);
+    private JLabel mtd = new JLabel("the play method is control the Determined face to overlapping the dot in 1 minutes!",JLabel.CENTER);
 
     public StartFrame(){
         init();
